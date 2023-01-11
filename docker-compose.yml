@@ -1,0 +1,12 @@
+forward:
+    build: ./front_apache
+    ports:
+        - 8081:80
+    links:
+        - backward:backward
+
+backward:
+    build: ./mod_process_security_1.2.0
+    ports:
+        - 8082:8082
+
